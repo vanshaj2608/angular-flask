@@ -9,6 +9,10 @@ app.config.from_object('angular_flask.settings')
 
 app.url_map.strict_slashes = False
 
+@app.route('/', methods=['GET', 'POST'])
+def home():
+	return render_template('index.html')
+
 import angular_flask.core
 import angular_flask.models
 import angular_flask.controllers
